@@ -1,0 +1,69 @@
+#,Company name,Position,Years of Experience,Grade,Industry,Achievements,Summary,Summary Quality
+1,Andersen,Talent Acquisition Manager,5,Middle,"IT, Software Developement","Managing end to end recruitment process; 
+Handling Talent acquisition process as a function; 
+Talent Acquisition process improvements and implementation; 
+managing stakeholders; managing candidate experience; 
+Talent Acquisition as business function, representation; 
+working on various additional projects linked with recruitment, candidate or hiring manager experience, and employer branding.","Experienced Talent Acquisition Specialist with a demonstrated history of working 5+ years in the human resources industry. Skilled in Energy, Communication, and Cooperation. Strong professional with a Master's degree focused in Organizational Psychology from Vilnius University. Passionate about People and bringing value!",1
+2,Tinkoff,Product Manager,3,Middle,EdTech,"Setting up an education platform for kids based on the banking app with 2mln clients.
+Responsible for both educational content creation and its launches within the app.
+Working with developers, designers, marketing, and content teams.","Highly self-motivated digital generalist with 3+ years of experience in product management and marketing. Analytical mindset and ability to own projects – budget, timeline, and resource management.",1
+3,Yandex Practicum,Project Manager,3,Middle,EdTech,"Produced several career courses (Career Prep Course, Tech Interview prep)
+Implemented new features to the platform to increase CR, Retention, and Referral metrics
+Implemented analytics for the career team
+Came up with an idea, produced and launched the Practicum podcast Data Space","Product manager with 3 years of experience and proven skills in creating courses and developing educational IT platforms. Also, have a strong background in product analysis in EdTech. Worked closely with the product team to develop innovative products and services",1
+4,Ozon,Senior IT Recruiter,7,Senior,Ecommerce,"Searching for senior and executive roles in the commercial department
+Led full recruitment cycle on the Russian local and international market 
+Created and led the training for recruiters ""How to search perfect candidates and to sell the offer""
+Provided permanent support for hiring managers in team management and hiring departments","Driving HR professional with 7+ years experience in recruitment across the world (Russia, CIS, Turkey, China). Working in TOP tech companies allowed me to fully understand various businesses (both existing and growing markets) and the main needs for hiring the greatest talents.",1
+5,Skyeng,Junior Data Analyst,1,Junior,EdTech," Calculated Retention and LTV of online cinema users. 
+ Conducted profitability analysis of an online cinema in Excel 
+ Completed analysis of content quality metrics and student learning outcomes on the dataset of online schools (SQL) including A/B test promotion (Python) 
+ Building a report for operational analysis of the state of the business (Power BI) 
+ Predicting the results of a promotion (calculator in Excel, SQL queries, Power BI) ","Prospective data analyst with 1 year of work experience who strives to pose and answer questions with quantitative-driven insights. With a passion for creative innovation and solving complex problems, I am eager to implement my skills and improve my data analysis experience with a data-driven data team.",1
+6,The Association of European Businesses — AEB,Marketing Manager,2,Middle,Government Relations,"Competitors’ analysis and creation of promotion strategy which led to a new strategy and launch of the new communication channel Telegram (+136% new followers, +65% of average view per post, an increase of ER)
+Email marketing, creating HTML mail newsletter (+32% of OR)
+Led the project of new website development, communicating with local and foreign agencies 
+Administration of the website through CMS (content management system)  an increase of viewers and average page views (data from Google Analytics)
+Preparation of analytical reports and research for Russian and EU Ministries","Marketing specialist with 3 years of experience and a wide range of professional and personal interests. As marketing is a broad sphere, I am mostly interested in digital, content, SMM, and communications, passionate about creating strategies based on analysis and business-oriented creativity.",1
+7,Amazon,Customer Success Specialist,3,Middle,Ecommerce,"Successfully resolved clients' problems via messenger and phone with an 80% Customer Satisfaction Score
+Effectively communicated with various departments (Sales, Technical, etc) to meet the client's needs and solve their issues
+Managed social network community of 16k subscribers: increased NPS and reduce negative feedback by solving client's complaints and problems","Outgoing Customer Service Officer with 3 years of experience and a passion for retail and e-commerce. Excellent communication skills have enabled me to build strong long-term relationships with customers as well as problem-solving skills that let me bring value to a business.
+Have successful experience in managing projects, supervising, and motivating team members.",1
+8,PwC,Audit Consultant,3,Middle,Finance,"Dealt with sales invoices, income, receipts, and payments
+Offered tailored financial advice to both individuals and companies
+Reviewed companies’ financial accounts information and offered advice and support concerning risk prevention and business development
+Prepared monthly payroll and administrated staff holidays and absences
+Assisted junior members of staff with complex accounting and auditing cases",Multiskilled Accountant with a keen eye for detail and 3 of years working experience with accounts. Strong mathematical skills as well as being able to produce clear and concise reports offering sound advice on a variety of different subjects. I am a clear and effective communicator and work well individually and as part of a team. Have a proven track record in providing high-quality results combined with an honest and reliable approach.,1
+9,White and Case,Legal Advisor,6,Senior,Legal,"Negotiated and drafted transactional agreements, nondisclosure agreements, and vendor agreements including agreements for new business markets
+Advised Company on secured transactions, negotiable instruments, leased goods, creditors, and assignee rights.
+Managed team of 15 paralegals: mentored and tracked employee metrics to monitor efficiency and provides regular reviews of their work.","Legal Advisor experience with 6 years of experience and consistent results in legal areas of commercial contracts, compliance, and risk management. Professional in issue spotting, evaluating risks, policy drafting, and understanding legal requirements. Extensive experience managing civil litigation, drafting vendor agreements, and non-disclosure agreements, and developing legal strategies. Proven leadership skills and experience in managing several cross-functional teams.",1
+10,Art. Lebedev Design Studio,UX/UI Designer,8,Senior,IT Services,"Working in a team of 12 designers to provide integrated design solutions for SAP systems all across the globe
+Conducted usability tests with more than 30 users to better understand user behaviors and usability patterns on responsive devices
+Worked with over 20 corporate clients across 5 time zones for more than a year
+Designed a new website interface for $10M monthly revenue client from the energy sector that resulted in a 3.6% increase in CR
+Increased the rate of feedback by 30% by enhancing the rating mechanism and overall postorder experience",UX/UI & Graphic Designer with 8 years of experience in designing new website functionalities and prototyping. Designed a new website interface for a $10M monthly revenue client from the energy sector that resulted in a 3.6% increase in CR.,1
+11,Dell,Data Scientist,5,Middle,Techology,"Collected technical requirements for $500K+ customer accounts, defining data rules for and KPIs for performance metrics.
+Perform HR data collection and a variety of statistical analyses using Microsoft Excel, SAS, Tableau, and Python.
+Assisted senior data science team in building innovative machine learning models and segmentations for personalization initiatives to drive margin, revenue, and conversion.
+Worked closely with a team of data engineers and BI analysts to improve the efficiency customer recommendation analytics engine by 33%.","With 5 years of experience working as a data scientist and strong background in analytical modeling and programming, I strive to bring high-quality business intelligence solutions to businesses seeking higher efficiency. With expertise in advanced statistical algorithms, machine learning, and forecasting, I have also worked on over 1150 high-performance parallel processing applications using C++ and C.",1
+12,Google,Junior frontend developer,2,Middle,IT,"Gathered requirements and assembled team of web developers and UX designers to build out new ticketing system, generating a scalable ecommerce platform that served millions of users per day
+Generated and implemented code for over 20 modules, including custom widgets and functionality to integrate thirdparty plugins for advanced analytics, data formatting, and multilanguage support
+Created 4 application to solve problems among the society
+Ensured endtoend process of data extraction until reporting and noted efficiency of close to 25%
+Developed my teamwork skills by working in close collaboration with 6 other students","Frontend developer with 2+ years of experience designing and building responsive web design and mobile apps in the financial industry. Proficient with CSS and JS Frameworks, with extensive knowledge of UX and user psychology. Notable achievements include boosting the conversion rate of an existing website by 60% with improved code and design.",1
+13,Revolut,Python Developer,3,Middle,FinTech,"Collaborated with Web Application Engineers, and used Python scripts to load the data into the AWS Cloud Cassandra database
+Visualized over 40 datasets with Matplotlib
+Involved in processing the streaming data as well as batch data using Apache Spark
+Delivering projects with 12 days turn around time or even within hours
+Analyzed the SQL scripts and designed the solution to develop a custom ETL pipeline by using Python","Python developer with 3 years of experience in finance and fintech. Well-acquainted with database engineering, data warehouses, and data processing. Knowledgeable in Python frameworks related to data such as SciPy, NumPy, and Matplotlib. Cloudera certified Data analyst, PCPP1 certification, and Spark/Hadoop developer certification.
+",1
+14,Playrix,QA Tester,1,Junior,GameDev,"Implemented all audio and scripted functionality for 2 Disney games
+Contributed to reducing the testing cycle of the company products by 50% via better test analysis and strategy
+Helped to perform more than 10 successful releases to the market
+Provided 100+ bug reports with detailed descriptions to development teams","A devoted professional with 1 year of experience as a QA Tester. Skilled in test scripts, bug fixes, and user interface. Adept at Selenium, Jira, and PL/SQL. Looking for a position that will help me utilize my critical thinking, creativity, and well-developed technical skills.",1
+15,Procter&Gamble,Senior Supply Chain Manager,8,Senior,FMCG,"Coordinating all supply chain services, leading a 100employee team
+Reducing the department's operating costs by 13% YoY
+Consistently meeting 100% of demand by implementing innovative forecasting tools and working closely with all teams
+Successfully planned new routes for truck drivers leading to a 50% decrease in late deliveries
+Optimized supply chain processes to decrease COVID19related losses","A disciplined Supply Chain Manager with over 8 years of experience in FMCG and the pharmaceutical industry. Proficient in process optimization, leading large teams, and forecasting.",1

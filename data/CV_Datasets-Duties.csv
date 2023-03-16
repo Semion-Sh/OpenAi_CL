@@ -1,0 +1,32 @@
+#,Company name,Position,Grade,Industry,Achievements
+1,Lawrify,Lead Product Manager,Senior,LegalTech,"Defined strategy and roadmap for 6 months, built up a SCRUM operational model"
+2,Amazon,Junior Business Analyst,Junior,Ecommerce,"Developed an intuitive system for standardized data reporting in the marketing and customer service departments.
+Produced over 20 reports on business performance and customer satisfaction, presenting key findings to various stakeholder groups.
+Defined requirements and milestones and measured KPIs for 10 high-budget projects"
+3,eBay,Business Systems Analyst,Middle,Ecommerce,"Introduced a new service review and data gathering system, leading to changes that decreased the number of monthly customer complaints by 60%.
+Prototyped and later implemented a follow-up process that doubled the number of returning customers."
+4,eBay,Business Systems Analyst,Middle,Ecommerce,"Mentored 2 junior business analysts and conducted Stitch training for a team of 8.
+Led the introduction of a centralized e-commerce management platform, improving efficiency by 30%. "
+5,New York Times,Junior Marketing Specialist,Junior,Marketing,"Assisted with research and writing of press releases and marketing copy for store promotions.
+Played a part in creation of quarterly marketing results presentations."
+6,Disney+,Marketing Manager,Middle,Marketing,"Implemented new competitive analysis and consumer trend reports to increase quarterly sales by 15%.
+Suggested new SEO tools which increased copywriters’ output by 25%.
+Managed SMM activities and implemented new autoposting solution to cut social media time spent by 35%"
+7,Netflix,Senior Marketing Manager,Senior,Marketing,"Managed $300K annual budget with full accountability for performance against immediate and long-range corporate objectives.
+Developed and implemented a leads generations strategy resulting in $7.5 million in new revenue over a two-year period.
+Led key marketing activities and achieved a marketing return on investment of 273% over a two-year period."
+8,Bloomberg,Junior Software Developer Manager,Junior,Software Developement,"Partnered with a developer to implement RESTful APIs in Django, enabling analytics team to increase reporting speed by 24%
+Using Selenium I built out a unit testing infrastructure for a client application that reduced the number of bugs reported by the client by 11% month over month"
+9,Citadel,Middle Software Developer Manager,Middle,Software Developement,"Constructed the logic for a streamlined ad-serving platform that scaled to our 35M users, which improved the page speed by 15% after implementation
+Tested software for bugs and operating speed, fixing bugs and documenting processes to increase efficiency by 18%
+Collaborating with a group of 4 engineers to create features across the software"
+10,Axios,Senior Software Developer Manager,Senior,Software Developement,"Worked with product managers to re-architect a multi-page web app into a single page web-app, boosting yearly revenue by $1.4M
+Contributed to a 15% increase in sales for 2 years in a row through overseeng software development and coding profitable apps using C#, C++, ASP, Java.
+Improved and optimized main website’s UI for seamless customer experience leading team of Software developement and designers"
+14,Meta,Junior Product Manager,Junior,Product management,"Managed the development of a new product from concept to launch, including market research and competitor analysis.
+Created detailed user stories that were used by engineering to create wireframes and prototypes for testing with customers before development began
+Conducted competitive analysis to identify opportunities for innovation within the company’s products and services"
+15,SoundCloud,Middle Product Manager,Middle,Product management,"Led 7 cross-functional teams from product conception through launch and multiple iterations. Increased 5 efficiency measures by 25%+.
+Recommended and implemented new pricing policy that increased LTV by 18%"
+
+
