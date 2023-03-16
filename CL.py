@@ -3,12 +3,15 @@ import openai
 import re
 from CV_duties import cv_sample, prompts_cv
 
-skils = 'SQL, Python, BigB, Data Visualization'
 openai.api_key = "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"
+
+# Data from user
+skils = 'SQL, Python, BigB, Data Visualization'
+last_position = "Business Analyst"
+years_experience = '7'
 COMPLETIONS_MODEL = "text-davinci-003"
 
 # Experience -----------------------------------------------------------------
-# И в CL хотим Experience заменить на фьюшоты as well
 experience_prompt = pd.read_csv('data/CL_Exp_New.csv', skipfooter=17, engine='python')
 
 
@@ -32,8 +35,8 @@ for _, row in experience_prompt.iterrows():
 
 request_experience = {
     "Company name": "Google",
-    "Position": "Business Analyst",
-    "Years of Experience": "7",
+    "Position": last_position,
+    "Years of Experience": years_experience,
     "Grade": "Senior",
     "Industry": "It",
     "Achievements": cv_sample,
@@ -82,11 +85,11 @@ for _, row in why_me_prompt.iterrows():
     why_me_cv.append(sample)
 
 request_why_me = {
-    "Years of experience": "7",
+    "Years of experience": years_experience,
     "Company that you applied for": "Apple",
     "Position that you apply for": "Business Analyst",
     "Company where you worked previously": "Google",
-    "Your last position at your last company where you worked": "Business Analyst",
+    "Your last position at your last company where you worked": last_position,
     "Skills": skils,
     "Why me": ""
 }
