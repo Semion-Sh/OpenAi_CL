@@ -1,7 +1,6 @@
 import pandas as pd
-import ttm
 from main import archivment
-# Вот сам датасет:
+
 summary_prompt = pd.read_csv('data/Summary_Dataset_QA.csv')
 
 
@@ -24,7 +23,6 @@ for _, row in summary_prompt.iterrows():
         continue
     sample = create_request_summary(row)
     summary_cv.append(sample)
-
 
 # Затем реквест + джойн
 

@@ -1,16 +1,51 @@
 import pandas as pd
 import openai
 import re
-from CV_duties import cv_sample, prompts_cv
 
 openai.api_key = "your api key"
 
 # Data from user
-skils = 'SQL, Python, BigB, Data Visualization'
+skils = "SQL, Python, BigB, Data Visualization"
 last_position = "Business Analyst"
-years_experience = '7'
+years_experience = "7"
+previously_company = "Google"
+company_apply_for = "Apple"
+position_apply_for = "Business Analyst"
 COMPLETIONS_MODEL = "text-davinci-003"
+grade = "senior"
 
+# Achievements -----------------------------------------------------------------
+cv_prompt = pd.read_csv('data/CV_Datasets-Duties.csv')
+
+
+def create_request_cv(params):
+    return f'Company name, where you worked on your role: {params["Company name"]}\n' + \
+        f'Your role at company where you worked: {params["Position"]}\n' + \
+        f'Level of your role: {params["Grade"]}\n' + \
+        f'Industry, where you worked on your role: {params["Industry"]}\n' + \
+        f'''Write a winning list of the achievements and duties related for the position, 
+incorporating the following features: company name, industry, grade and job role: {params["Achievements"]}\n'''
+
+
+prompts_cv = []
+for _, row in cv_prompt.iterrows():
+    if row.iloc[1:].isna().all():
+        continue
+    sample = create_request_cv(row)
+    prompts_cv.append(sample)
+
+# request by customer
+request = {
+    "Company name": previously_company,
+    "Position": last_position,
+    "Grade": grade,
+    "Industry": "IT",
+    "Achievements": "",
+}
+
+quality_prompt_cv = create_request_cv(request)
+prompts_cv.append(quality_prompt_cv)
+achievements = "\n\n".join(prompts_cv)
 # Experience -----------------------------------------------------------------
 experience_prompt = pd.read_csv('data/CL_Exp_New.csv', skipfooter=17, engine='python')
 
@@ -34,12 +69,12 @@ for _, row in experience_prompt.iterrows():
     experience_cv.append(sample)
 
 request_experience = {
-    "Company name": "Google",
+    "Company name": previously_company,
     "Position": last_position,
     "Years of Experience": years_experience,
-    "Grade": "Senior",
+    "Grade": grade,
     "Industry": "It",
-    "Achievements": cv_sample,
+    "Achievements": achievements,
     "Experience": ""
 }
 
@@ -86,9 +121,9 @@ for _, row in why_me_prompt.iterrows():
 
 request_why_me = {
     "Years of experience": years_experience,
-    "Company that you applied for": "Apple",
-    "Position that you apply for": "Business Analyst",
-    "Company where you worked previously": "Google",
+    "Company that you applied for": company_apply_for,
+    "Position that you apply for": position_apply_for,
+    "Company where you worked previously": previously_company,
     "Your last position at your last company where you worked": last_position,
     "Skills": skils,
     "Why me": ""
@@ -130,7 +165,7 @@ for _, row in why_company_prompt.iterrows():
     why_company_cv.append(sample)
 
 request_why_company = {
-    "Company that you applied for": "Apple",
+    "Company that you applied for": company_apply_for,
     "Why company": ""
 }
 
@@ -150,6 +185,5 @@ why_company = openai.Completion.create(
 ).choices[0]["text"].strip(" \n")
 
 final_why_company = re.sub(r"([\.!?])[^\.!?]*$", r'\1', why_company)
-
 cl = final_experience + '\n ' + final_why_me + '\n ' + final_why_company
 print(cl)

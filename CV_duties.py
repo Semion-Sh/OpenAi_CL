@@ -1,13 +1,9 @@
 # create Achievements by 'Company name', 'Position', 'Grade', 'Industry'
 
 import pandas as pd
-import ttm
 
 cv_prompt = pd.read_csv('data/CV_Datasets-Duties.csv')
 
-
-# Что я делаю:
-# Объявляю переменную, для чтения данных. Для CV duties
 
 def create_request_cv(params):
     return f'Company name, where you worked on your role: {params["Company name"]}\n' + \
@@ -18,7 +14,6 @@ def create_request_cv(params):
 incorporating the following features: company name, industry, grade and job role: {params["Achievements"]}\n'''
 
 
-# Дальше складываю все прочитанные данные из файла в лист
 prompts_cv = []
 for _, row in cv_prompt.iterrows():
     if row.iloc[1:].isna().all():
@@ -35,9 +30,6 @@ request = {
     "Achievements": "",
 }
 
-# Я его джойню к листу promopts_cv
-# и отправляю это всё на генерацию
-
 quality_prompt_cv = create_request_cv(request)
 prompts_cv.append(quality_prompt_cv)
 cv_sample = "\n\n".join(prompts_cv)
@@ -50,7 +42,6 @@ cv_sample = "\n\n".join(prompts_cv)
 
 # # После вывожу все гипотезы предварительно обрезав предложения с помощью регулярки
 # cv_sample = re.sub(r'([\.!?])[^\.!?]*$', r'\1', result)
-
 
 
 # 11,,Junior Sales Manager,Junior,Sales,

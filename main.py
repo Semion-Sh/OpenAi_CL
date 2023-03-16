@@ -5,6 +5,7 @@ import pickle
 # from transformers import GPT2TokenizerFast
 from typing import List
 from CV_duties import cv_sample, prompts_cv
+
 openai.api_key = "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"
 COMPLETIONS_MODEL = "text-davinci-003"
 # COMPLETIONS_MODEL = "text-curie-001"
