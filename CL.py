@@ -3,7 +3,7 @@ import openai
 import re
 from CV_duties import cv_sample, prompts_cv
 
-openai.api_key = "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"
+openai.api_key = "your api key"
 
 # Data from user
 skils = 'SQL, Python, BigB, Data Visualization'
