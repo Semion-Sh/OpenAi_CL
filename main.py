@@ -6,7 +6,7 @@ import pickle
 from typing import List
 from CV_duties import cv_sample, prompts_cv
 
-openai.api_key = "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"
+openai.api_key = "your api key"
 COMPLETIONS_MODEL = "text-davinci-003"
 # COMPLETIONS_MODEL = "text-curie-001"
 
