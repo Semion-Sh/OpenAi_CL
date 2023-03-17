@@ -3,6 +3,7 @@ import openai
 import re
 
 openai.api_key = "your api key"
+COMPLETIONS_MODEL = "text-davinci-003"
 
 # Data from user
 skils = "SQL, Python, BigB, Data Visualization"
@@ -11,14 +12,14 @@ years_experience = "7"
 previously_company = "Google"
 company_apply_for = "Apple"
 position_apply_for = "Business Analyst"
-COMPLETIONS_MODEL = "text-davinci-003"
 grade = "senior"
+industry = "IT"
 
 # Achievements -----------------------------------------------------------------
-cv_prompt = pd.read_csv('data/CV_Datasets-Duties.csv')
+cl_prompt = pd.read_csv('data/CV_Datasets-Duties.csv')
 
 
-def create_request_cv(params):
+def create_request_cl(params):
     return f'Company name, where you worked on your role: {params["Company name"]}\n' + \
         f'Your role at company where you worked: {params["Position"]}\n' + \
         f'Level of your role: {params["Grade"]}\n' + \
@@ -27,25 +28,39 @@ def create_request_cv(params):
 incorporating the following features: company name, industry, grade and job role: {params["Achievements"]}\n'''
 
 
-prompts_cv = []
-for _, row in cv_prompt.iterrows():
+prompts_cl = []
+for _, row in cl_prompt.iterrows():
     if row.iloc[1:].isna().all():
         continue
-    sample = create_request_cv(row)
-    prompts_cv.append(sample)
+    sample = create_request_cl(row)
+    prompts_cl.append(sample)
 
 # request by customer
 request = {
     "Company name": previously_company,
     "Position": last_position,
     "Grade": grade,
-    "Industry": "IT",
+    "Industry": industry,
     "Achievements": "",
 }
 
-quality_prompt_cv = create_request_cv(request)
-prompts_cv.append(quality_prompt_cv)
-achievements = "\n\n".join(prompts_cv)
+quality_prompt_cl = create_request_cl(request)
+prompts_cl.append(quality_prompt_cl)
+achievements_fewshot = "\n\n".join(prompts_cl)
+
+achievements_request = openai.Completion.create(
+    prompt=achievements_fewshot,
+    temperature=0.7,
+    max_tokens=100,
+    top_p=1,
+    n=1,
+    frequency_penalty=0,
+    presence_penalty=0,
+    model=COMPLETIONS_MODEL
+).choices[0]["text"].strip(" \n")
+
+final_achievements = re.sub(r"([\.!?])[^\.!?]*$", r'\1', achievements_request)
+
 # Experience -----------------------------------------------------------------
 experience_prompt = pd.read_csv('data/CL_Exp_New.csv', skipfooter=17, engine='python')
 
@@ -61,26 +76,26 @@ def create_request_experience(params):
         incorporating the years of experience, position, company, industry, achievements: {params["Experience"]}\n'''
 
 
-experience_cv = []
+experience_cl = []
 for _, row in experience_prompt.iterrows():
     if row.iloc[1:].isna().all():
         continue
     sample = create_request_experience(row)
-    experience_cv.append(sample)
+    experience_cl.append(sample)
 
 request_experience = {
     "Company name": previously_company,
     "Position": last_position,
     "Years of Experience": years_experience,
     "Grade": grade,
-    "Industry": "It",
-    "Achievements": achievements,
+    "Industry": industry,
+    "Achievements": final_achievements,
     "Experience": ""
 }
 
 quality_exp = create_request_experience(request_experience)
-experience_cv.append(quality_exp)
-exp_fewshot = "\n\n".join(experience_cv)
+experience_cl.append(quality_exp)
+exp_fewshot = "\n\n".join(experience_cl)
 
 experience_request = openai.Completion.create(
     prompt=exp_fewshot,
@@ -94,10 +109,8 @@ experience_request = openai.Completion.create(
 ).choices[0]["text"].strip(" \n")
 
 final_experience = re.sub(r"([\.!?])[^\.!?]*$", r'\1', experience_request)
-# print(experience)
 
 # Why me -----------------------------------------------------------------
-
 why_me_prompt = pd.read_csv('data/CLsplitted-Data.csv', skipfooter=699, engine='python')
 
 
@@ -112,12 +125,12 @@ def create_request_why_me(params):
         incorporating the years of experience, Company that you applied for, Position that you apply for, Company where you worked previously, Your last position at your last company where you worked, Skills: {params["Why me"]}\n'''
 
 
-why_me_cv = []
+why_me_cl = []
 for _, row in why_me_prompt.iterrows():
     if row.iloc[1:].isna().all():
         continue
     sample = create_request_why_me(row)
-    why_me_cv.append(sample)
+    why_me_cl.append(sample)
 
 request_why_me = {
     "Years of experience": years_experience,
@@ -130,8 +143,8 @@ request_why_me = {
 }
 
 quality_why_me = create_request_why_me(request_why_me)
-why_me_cv.append(quality_why_me)
-why_me_fewshot = "\n\n".join(why_me_cv)
+why_me_cl.append(quality_why_me)
+why_me_fewshot = "\n\n".join(why_me_cl)
 
 why_me = openai.Completion.create(
     prompt=why_me_fewshot,
@@ -147,7 +160,6 @@ why_me = openai.Completion.create(
 final_why_me = re.sub(r"([\.!?])[^\.!?]*$", r'\1', why_me)
 
 # Why company -----------------------------------------------------------------
-
 why_company_prompt = pd.read_csv('data/CLsplitted-Data.csv', skipfooter=500, engine='python')
 
 
@@ -157,12 +169,12 @@ def create_request_why_company(params):
         incorporating Company that you applied for: {params["Why company"]}\n'''
 
 
-why_company_cv = []
+why_company_cl = []
 for _, row in why_company_prompt.iterrows():
     if row.iloc[1:].isna().all():
         continue
     sample = create_request_why_company(row)
-    why_company_cv.append(sample)
+    why_company_cl.append(sample)
 
 request_why_company = {
     "Company that you applied for": company_apply_for,
@@ -170,8 +182,8 @@ request_why_company = {
 }
 
 quality_why_company = create_request_why_company(request_why_company)
-why_company_cv.append(quality_why_company)
-why_company_fewshot = "\n\n".join(why_company_cv)
+why_company_cl.append(quality_why_company)
+why_company_fewshot = "\n\n".join(why_company_cl)
 
 why_company = openai.Completion.create(
     prompt=why_company_fewshot,
@@ -185,5 +197,5 @@ why_company = openai.Completion.create(
 ).choices[0]["text"].strip(" \n")
 
 final_why_company = re.sub(r"([\.!?])[^\.!?]*$", r'\1', why_company)
-cl = final_experience + '\n ' + final_why_me + '\n ' + final_why_company
-print(cl)
+final_cl = final_experience + '\n ' + final_why_me + '\n ' + final_why_company
+print(final_cl)
