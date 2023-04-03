@@ -2,7 +2,8 @@ import pandas as pd
 import openai
 import re
 
-openai.api_key = "your api key"
+# openai.api_key = "your api key"
+
 COMPLETIONS_MODEL = "text-davinci-003"
 
 # Data from user
@@ -197,5 +198,50 @@ why_company = openai.Completion.create(
 ).choices[0]["text"].strip(" \n")
 
 final_why_company = re.sub(r"([\.!?])[^\.!?]*$", r'\1', why_company)
-final_cl = final_experience + '\n ' + final_why_me + '\n ' + final_why_company
-print(final_cl)
+
+# Why functional change
+why_functional_change = pd.read_csv('data/CL_why-change.csv')
+
+def create_request_why_change(params):
+    return f'''The experience of the person for a Cover Letter, 
+        incorporating the years of experience, position, company, industry, achievements: {params["Expirience"]}\n''' + \
+        f'''The description of the why company should choose me for a Cover Letter on behalf of the employee,
+        incorporating the years of experience, Company that you applied for, Position that you apply for, Company where you worked previously, Your last position at your last company where you worked, Skills: {params["Why me"]}\n'''+ \
+        f'''The description of the why company for a Cover Letter,
+        incorporating Company that you applied for: {params["Why company"]}\n''' + \
+        f'''Create a winning explanation of why I decided to switch roles and how my skills matched with the new role, including the following information: Expirience, Why me, Why company: {params["Why functional change"]}\n'''
+
+why_change_cl = []
+for _, row in why_functional_change.iterrows():
+    if row.iloc[1:].isna().all():
+        continue
+    sample = create_request_why_change(row)
+    why_change_cl.append(sample)
+
+
+request_why_change = {
+    "Expirience": final_experience,
+    "Why me": final_why_me,
+    "Why company": final_why_company,
+    "Why functional change": '',
+}
+
+quality_why_change = create_request_why_change(request_why_change)
+why_change_cl.append(quality_why_change)
+why_change_fewshot = "\n\n".join(why_change_cl)
+
+why_change = openai.Completion.create(
+    prompt=why_change_fewshot,
+    temperature=0.7,
+    max_tokens=100,
+    top_p=1,
+    n=1,
+    frequency_penalty=0,
+    presence_penalty=0,
+    model=COMPLETIONS_MODEL
+).choices[0]["text"].strip(" \n")
+
+final_why_change = re.sub(r"([\.!?])[^\.!?]*$", r'\1', why_change)
+
+final_cl = final_experience + '\n ' + final_why_me + '\n ' + final_why_company + '\n ' + final_why_change
+# print(final_cl)
